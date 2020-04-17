@@ -1,15 +1,17 @@
 <?php  
 class Pages extends Controller {
     public function __construct() {
-     
+      $this->postModel = $this->model('Post');
     }
 
     public function index() {
-      $this->view('pages/home', ['title' => 'welcome']);
+      $data = ['title' => 'welcome'];
+      $this->view('pages/home', $data);
     }
 
     public function about() {
-      $this->view('pages/about');
+      $data = ['title' => 'welcome'];
+      $this->view('pages/about', $data);
     }
   }
 ?> 
