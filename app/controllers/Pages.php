@@ -5,8 +5,12 @@ class Pages extends Controller {
     }
 
     public function index() {
-      $data = ['title' => 'welcome'];
-      $this->view('pages/home', $data);
+      $posts = $this->postModel->getPosts();
+      $data = [
+        'title' => 'welcome',
+        'posts' => $posts
+      ];
+      $this->view('pages/index', $data);
     }
 
     public function about() {
@@ -15,3 +19,4 @@ class Pages extends Controller {
     }
   }
 ?> 
+  
